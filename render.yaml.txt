@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: in1ai-converter-api
+    env: python
+    plan: free
+    buildCommand: |
+      apt-get update
+      apt-get install -y libreoffice
+    startCommand: uvicorn app:app --host 0.0.0.0 --port 10000
